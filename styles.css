@@ -2,26 +2,162 @@
 :root {
     --color-primary: rgb(105, 211, 243);
     --color-secondary: rgb(250, 231, 234);
-    --color-accent: rgb(243, 224, 183);
+    --color-accent: rgb(223, 126, 226);
     --color-headings: rgb(39, 35, 35);
     --color-body: brown;
 }
+/* Typography */
+html {
+    /* 62.5% of 16px = 10px */
+    font-size: 62.5%;
+}
+body {
+    font-family: Syne Mono, Arial, Helvetica, sans-serif;
+    color: var(--color-body);
+    line-height: 1.5;
+    font-size: 2.4rem;
+}
+h1, h2, h3 {
+    color: var(--color-headings);
+    margin-bottom: 1rem; /* needed? */
+}
+h1 {
+    font-size: 7rem; /* = * 10 px */
+}
+h2 {
+    font-size: 4rem;
+}
+h3 {
+    font-size: 3rem;
+    
+}
+
+/* Media queries */
+@media screen and (min-width: 1024px){ /*check size */
+    body {
+        font-size: 1.8rem; /* check sizes */
+    }
+    h1 {
+        font-size: 8rem;
+    }
+    h2 {
+        font-size: 4rem;
+    }
+    h3 {
+        font-size: 2.4rem;
+    }
+}
+/*@media screen and (min-width: 1024px){ /* WHY DOES THIS NOT WORK? We'll do icons
+    .link-arrow-right {
+        font-size: 14rem;
+    }
+    .link-arrow-left {
+        font-size: 14rem;
+    }
+    .link-arrow-right:hover::after {
+        font-size: 20rem;
+    }
+    .link-arrow-left:hover::after {
+        font-size: 20rem;
+    }
+*/
+@media screen and (min-width: 1024px){
+    .nav {
+        height: 18rem; 
+        
+    }
+}
+@media screen and (min-width: 1024px){
+    .nav__item {
+        display: inline;
+        font-size: 4rem;
+    }
+    .list {
+        display: flex;
+        justify-content: space-around;
+        height: 10vh  /* why does this not work?;
+    }
+}
+
+
+/* Links */
+a {
+    text-decoration: none;
+
+}
+/*
+ /* this is all repeated, fix            Get arrow icons.
+.link-arrow-right {
+    color: var(--color-accent);
+    font-size: 4rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.link-arrow-right::after { /* WHY DOES THIS NOT WORK IN THE ABOVE? 
+    content: '>';
+}
+.link-arrow-right:hover::after {
+    font-size: 8rem;
+    transition: 0.5s;
+}
+.link-arrow-left {
+    color: var(--color-accent);
+    font-size: 4rem;
+    display: flex;
+    align-items: center; 
+}
+.link-arrow-left::after {
+    content: '<';
+}
+.link-arrow-left:hover::after {
+    font-size: 8rem;
+    transition: 0.5s;
+}
+*/
 * {
     box-sizing: border-box;
-    
-
-
-.navbar {
-    display: flex;
-    width: 100vw;
-    height: 20vh;
 }
+
+
+.nav {
+    /*background: rgb(241, 235, 179);*/
+    
+}
+.list {
+    width: 100vw;
+    height: 25vh;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: rgb(241, 235, 179);
+    
+}
+.list a:hover {
+    background-color: #555;
+    color: white;
+  }
 .nav__item {
-    list-style-type: none;
-    display: inline;
-    justify-content: space-between;
-    color: aqua;
+    list-style-type: none;  /* how do i make these space between? */
     transition: color 0.3s;
+    background-color: antiquewhite;
+    margin-bottom: .5rem;
+}
+.nav__item > a {
+    color: var(--color-primary);
+}
+
+/* body */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.content {
+    width: 75vw;
+    height: 60vh;
+    margin-top: 5rem;
+    background-color: blue;
 }
 
 /*body {
