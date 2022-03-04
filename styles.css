@@ -3,8 +3,8 @@
     --color-primary: rgb(27,116,91);
     --color-secondary: rgb(250, 214, 218);
     --color-accent: rgb(169, 232, 252);
-    --color-headings: rgb(39, 35, 35);
-    --color-body: brown;
+    --color-headings: rgb(100, 36, 36);
+    --color-body: rgb(255, 255, 255);
 }
 
 /* Typography */
@@ -14,15 +14,18 @@ html {
 }
 body {
     font-family: Syne Mono, Arial, Helvetica, sans-serif;
-    color: var(--color-body);
+    color: var(--color-secondary);
     line-height: 1;
     font-size: 2.4rem;
     background: rgb(27,116,91);
     background: linear-gradient(196deg, rgba(27,116,91,0.7506712157519257) 9%, rgba(28,59,61,0.8543126723345589) 100%);
 }
-h1, h2, h3 {
+h1 {
     color: var(--color-secondary);
     margin-bottom: 1rem; /* needed? */
+}
+h2 {
+    color: var(--color-headings);
 }
 h1 {
     font-size: 4rem; /* = * 10 px */
@@ -32,11 +35,15 @@ h2 {
 }
 h3 {
     font-size: 2.8rem;
-    
+    color: var(--color-accent);
+}
+time {
+    color: var(--color-secondary);
 }
 
+
 /* Media queries */
-@media screen and (min-width: 1024px){ /*check size */
+@media screen and (min-width: 1024px){ /* overflow hidden removes border right and cuts photo on phones. center home photo surface pro, ipad mini/air,  */
     body {
         font-size: 1.8rem; /* check sizes */
     }
@@ -52,7 +59,7 @@ h3 {
     .nav {
         height: 6rem; 
     }
-    .nav__item {
+    .nav_item {
         font-size: 4rem;
     }
     .nav .list {
@@ -67,6 +74,27 @@ h3 {
     .content .photo {
         width: 1366px;
         height: 768px;
+    }
+    /* Blog */
+    .blog_div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+    }
+    .blog_div .blog {
+        width: 45vw;
+        height: fit-content;
+        justify-content: center;
+        margin: 0 4rem 0 4rem; 
+        
+        
+    }
+    .blog_div .blog_image {
+        margin: 4rem;
+    }
+    .oldblog {
+        text-align: center;
     }
 }
 /*@media screen and (min-width: 1024px){ /* WHY DOES THIS NOT WORK? We'll do icons
@@ -87,6 +115,10 @@ h3 {
 /* Links */
 a {
     text-decoration: none;
+    color: whitesmoke;
+}
+a:visited {
+    color: whitesmoke;
 }
 /*
  /* this is all repeated, fix            Get arrow icons.
@@ -130,6 +162,7 @@ a {
 .list {
     width: 100%;
     margin: 0;
+    margin-top: 2rem; /* put in above */
     padding: 0px;
     text-align: center;
 }
@@ -138,13 +171,13 @@ a {
     color: whitesmoke;
     padding: 1.1rem;
   }
-.nav__item {
+.nav_item {
     list-style-type: none; 
     transition: color 0.3s;
     background-color: var(--color-secondary);
     margin-bottom: .5rem;
 }
-.nav__item > a {
+.nav_item > a {
     color: var(--color-primary);
 }
 
@@ -155,6 +188,7 @@ a {
 
 /* body */
 .container {
+    overflow: hidden; /* overflow hidden removes border right and cuts photo on phones */
     /*display: flex;
     flex-direction: row;
     justify-content: center;*/
@@ -196,18 +230,18 @@ a {
     width: 100%;
     text-align: center;
 }
-.nav__item {
+.nav_item {
     padding: 0 2rem;
     display: inline;
 }
 
-.nav__item > a {
+.nav_item > a {
     color: rgb(247, 124, 23);
     opacity: 0.8;
     transition: color 0.3s;
     font-size: 22px;
 }
-.nav__item > a:hover {
+.nav_item > a:hover {
     color: white;
 }
 .info {
@@ -236,3 +270,58 @@ a {
     /* height: rem;             Footer height */
     color: var(--color-accent);
 }
+
+
+
+
+
+/* Blog */
+.blog_div {
+    margin-top: 6rem;
+}
+.blog {
+    border-bottom: 2px solid var(--color-secondary);
+    overflow: hidden; /* picture cut off */
+    /* width: fit-content;
+    height: fit-content; */
+}
+.blog_h2 {
+    margin-left: 4rem;
+}
+.title {
+    margin-left: 4rem;
+}
+.blog_image {
+    
+}
+.blog_text {
+    margin-left: 4rem;
+    margin-bottom: 8rem;
+}
+
+.previous {
+    display: flex;
+    justify-content: center;
+}
+
+#moreblogs {
+    display: block;
+    text-align: center;
+    margin-bottom: 6rem;
+}
+.oldblog {
+    margin-bottom: 6rem;
+    
+}
+
+/* Contact */
+.contact_div {
+    display: flex;
+}
+.contact_div .contact {
+    justify-content: center;
+}
+.contact a:hover {
+    color: var(--color-accent);
+    padding: 1.1rem;
+  }
