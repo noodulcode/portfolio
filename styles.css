@@ -188,12 +188,37 @@ a:visited {
 
 /* body */
 .container {
+    display: grid;
+    grid-template: 25rem auto / 40fr 60fr;
+    gap: 10px;
+    height: 75vh;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+.box {
+    
+}
+.box-text {
+    text-align: center;
+    color: var(--color-secondary);
+    font-size: 2rem;
+    align-self: center;
+}
+.box-photo {
+    grid-row: span 2;
+    overflow: hidden;
+}
+.box-pic {
+    overflow: hidden;
+}
+/* for the forest photo 
+.container {
     overflow: hidden; /* overflow hidden removes border right and cuts photo on phones */
     /*display: flex;
     flex-direction: row;
-    justify-content: center;*/
+    justify-content: center;
     
-}
+}*/
 .content {
     width: 80vw;
     height: 85vh;
@@ -317,11 +342,17 @@ a:visited {
 /* Contact */
 .contact_div {
     display: flex;
+    justify-content: center;
 }
 .contact_div .contact {
     justify-content: center;
+    text-align: center;
 }
 .contact a:hover {
     color: var(--color-accent);
     padding: 1.1rem;
+  }
+  .image_div {
+      display: flex;
+      justify-content: center;
   }
