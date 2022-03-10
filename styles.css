@@ -39,10 +39,13 @@ h3 {
 time {
     color: var(--color-secondary);
 }
-/* Image Responsiveness */
+/* Images */
 .responsive {
     max-width: 100%;
     height: auto;
+}
+.radius {
+    border-radius: 5px;
 }
 /* Links */
 a {
